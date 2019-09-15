@@ -9,6 +9,10 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // to extract the css as a separate file
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+
+const Dotenv = require('dotenv-webpack');
+
+
 var MODE =
     process.env.npm_lifecycle_event === "prod" ? "production" : "development";
 var withDebug = !process.env["npm_config_nodebug"];
@@ -26,6 +30,7 @@ var common = {
         filename: MODE == "production" ? "[name]-[hash].js" : "index.js"
     },
     plugins: [
+        new Dotenv(),
         new HTMLWebpackPlugin({
             // Use this template to get basic responsive meta tags
             template: "src/index.html",
@@ -117,7 +122,6 @@ if (MODE === "development") {
             before(app) {
                 // on port 3000
                 app.post("/submit", function(req, res) {
-                    console.log("submit hit");
                     res.sendStatus(200);
                 });
             }

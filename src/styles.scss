@@ -1,5 +1,13 @@
 @import "~bootstrap/scss/bootstrap";
 
+body {
+    height: 100vh;
+    background-color: #fafafa;
+}
 .card {
     max-width: 400px;
+}
+
+.error-container {
+    height: 20px;
 }
