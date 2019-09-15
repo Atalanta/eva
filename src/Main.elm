@@ -54,7 +54,9 @@ type AsyncStatus
 
 
 
--- Init
+-- ------------------
+-- INIT
+-- ------------------
 
 
 init : String -> ( Model, Cmd Msg )
@@ -63,7 +65,9 @@ init secret =
 
 
 
--- Update
+-- ------------------
+-- UPDATE
+-- ------------------
 
 
 type Msg
